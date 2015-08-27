@@ -87,6 +87,8 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Comments");
 
+        jScrollPane1.setAutoscrolls(true);
+
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
@@ -97,7 +99,7 @@ public class NewJFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -143,19 +145,20 @@ public class NewJFrame extends javax.swing.JFrame {
     @SuppressWarnings("empty-statement")
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String inputName = jTextField1.getText();
-        String textfield = jTextArea1.getText();
+        String comments = jTextArea1.getText();
         double numberinput = Double.parseDouble(jTextField2.getText());
         double quantity = Double.parseDouble(jTextField3.getText());
-        double shit = quantity-1;
-        double i =0;
-        File writeFile = new File(inputName+".csv");
+        File writeFile = new File(inputName + ".csv");
         try {
-            if(!"".equals(inputName) && writeFile.exists() != true){ // so the user can't screw up and make a blank csv by accident
+            if(!"".equals(inputName)
+                    && writeFile.exists() != true 
+                    && Double.parseDouble(jTextField3.getText()) > 0
+                    && Double.parseDouble(jTextField2.getText()) > 0){ // so the user can't screw up and make a blank csv by accident
                 
                 FileWriter fileWriter = new FileWriter(writeFile, true); 
                 BufferedWriter buffer = new BufferedWriter(fileWriter);
                 PrintWriter printWriter = new PrintWriter(fileWriter);
-                printWriter.printf("category path = Root\\Kit Serial Numbers\n"
+                printWriter.print("category path = Root\\Kit Serial Numbers\n"
                             + "Miguel Cantu,,,,Chris Rucker (Quality),,,,,,Chris Hoagland,,,,,,,,,,,,,,,,,,\n"                      
                             +"Serial #,,Part #,,Capacitance,,Esr,,Leakage,,Anode Lot,,,,,Cathode Lot,,Tantalum Lot,,,,,,,,,,,\n"
                             +",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
@@ -173,10 +176,8 @@ public class NewJFrame extends javax.swing.JFrame {
                             + ",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
                             + "Serial #,,Part #,,Capacitance,,Esr,,Leakage,,Anode Lot,,,,,Cathode Lot,,Tantalum Lot,,"
                             +"Teflon Spacer 1,,Teflon Spacer 2,,Teflon Spacer 3,,Teflon Lot #,,Comments,\n");
-                for(i=numberinput;i<=shit+numberinput;i++){
-                    PrintWriter printf = printWriter.printf("%f",i);
-                    printWriter.printf(",,,,,,,,,,,,,,,,,,,,,,,,,,,%s\n",textfield);
-                    System.out.print(i+"\n");
+                for(int i = (int) numberinput; i < quantity + numberinput; i++){
+                    printWriter.print(i + ",,,,,,,,,,,,,,,,,,,,,,,,,,," + comments + ",\n");
                 }
          
                 printWriter.close();
@@ -186,13 +187,15 @@ public class NewJFrame extends javax.swing.JFrame {
          
          
             }
-            
-            else{
-                jLabel2.setText("Cannot write file.");
-                System.out.println("system is a down");
-             }
+            else if (Double.parseDouble(jTextField3.getText()) < 1)
+                jTextField3.setText("Please enter a valid quantity.");
+            else if (Double.parseDouble(jTextField2.getText()) > 0)
+                jTextField2.setText("Please enter a valid serial.");
+            else if (writeFile.exists() == true)
+                jTextField1.setText("File name taken.");
+                
     } catch (IOException ex) {
-       
+                jLabel2.setText("Cannot write file.");
     }  // TODO add 
         
             //dd your handling code here:
