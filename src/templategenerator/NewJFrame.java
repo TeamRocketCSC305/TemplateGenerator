@@ -149,6 +149,7 @@ public class NewJFrame extends javax.swing.JFrame {
         double numberinput = Double.parseDouble(jTextField2.getText());
         double quantity = Double.parseDouble(jTextField3.getText());
         File writeFile = new File(inputName + ".csv");
+        String serialText;
         try {
             if(!"".equals(inputName)
                     && writeFile.exists() != true 
@@ -176,8 +177,9 @@ public class NewJFrame extends javax.swing.JFrame {
                             + ",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
                             + "Serial #,,Part #,,Capacitance,,Esr,,Leakage,,Anode Lot,,,,,Cathode Lot,,Tantalum Lot,,"
                             +"Teflon Spacer 1,,Teflon Spacer 2,,Teflon Spacer 3,,Teflon Lot #,,Comments,\n");
-                for(int i = (int) numberinput; i < quantity + numberinput; i++){
-                    printWriter.print(i + ",,,,,,,,,,,,,,,,,,,,,,,,,,," + comments + ",\n");
+                for(Double number = numberinput; number < quantity + numberinput; number++){
+                    serialText = String.valueOf(number).indexOf(".") < 0 ? String.valueOf(number) : String.valueOf(number).replaceAll("0*$", "").replaceAll("\\.$", "");
+                    printWriter.print(serialText + ",,,,,,,,,,,,,,,,,,,,,,,,,,," + comments + ",\n");
                 }
          
                 printWriter.close();
