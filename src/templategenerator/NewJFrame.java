@@ -160,26 +160,26 @@ public class NewJFrame extends javax.swing.JFrame {
                 BufferedWriter buffer = new BufferedWriter(fileWriter);
                 PrintWriter printWriter = new PrintWriter(fileWriter);
                 printWriter.print("category path = Root\\Kit Serial Numbers\n"
-                            + "Miguel Cantu,,,,Chris Rucker (Quality),,,,,,Chris Hoagland,,,,,,,,,,,,,,,,,,\n"                      
-                            +"Serial #,,Part #,,Capacitance,,Esr,,Leakage,,Anode Lot,,,,,Cathode Lot,,Tantalum Lot,,,,,,,,,,Comments,\n"
-                            +",,,,,,,,,,,,,,,,,,,,,,,,,,," + comments + ",\n"
-                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
-                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
-                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
-                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
-                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
-                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
-                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
-                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
-                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
-                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
-                            + "Entered Data,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
-                            + ",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
-                            + "Serial #,,Part #,,Capacitance,,Esr,,Leakage,,Anode Lot,,,,,Cathode Lot,,Tantalum Lot,,"
+                            + "Miguel Cantu,,,,Chris Rucker (Quality),,,,,,Chris Hoagland,,,,,,,,,,,,,,,,,,,,\n"                      
+                            +"Serial #,,Part #,,Capacitance,,Esr,,Leakage,,Anode Lot,,,,,Cathode Lot,,Tantalum Lot,,Header Glassing,,,,,,,,,,Comments,\n"
+                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,," + comments + ",\n"
+                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
+                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
+                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
+                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
+                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
+                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
+                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
+                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
+                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
+                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
+                            + "Entered Data,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
+                            + ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
+                            + "Serial #,,Part #,,Capacitance,,Esr,,Leakage,,Anode Lot,,,,,Cathode Lot,,Tantalum Lot,,Header Glassing,,"
                             +"Teflon Spacer 1,,Teflon Spacer 2,,Teflon Spacer 3,,Teflon Lot #,,Comments,\n");
                 for(Double number = numberinput; number < quantity + numberinput; number++){
                     serialText = String.valueOf(number).indexOf(".") < 0 ? String.valueOf(number) : String.valueOf(number).replaceAll("0*$", "").replaceAll("\\.$", "");
-                    printWriter.print(serialText + ",,,,,,,,,,,,,,,,,,,,,,,,,,,,\n");
+                    printWriter.print(serialText + ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n");
                 }
          
                 printWriter.close();
