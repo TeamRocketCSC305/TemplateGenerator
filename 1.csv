@@ -1,0 +1,74 @@
+category path = Root\Kit Serial Numbers
+Miguel Cantu,,,,Chris Rucker (Quality),,,,,,Chris Hoagland,,,,,,,,,,,,,,,,,,,,
+Serial #,,Part #,,Capacitance,,Esr,,Leakage,,Anode Lot,,,,,Cathode Lot,,Tantalum Lot,,Header Glassing,,,,,,,,,,Comments,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,heyyeayeaahyeah,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Entered Data,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Serial #,,Part #,,Capacitance,,Esr,,Leakage,,Anode Lot,,,,,Cathode Lot,,Tantalum Lot,,Header Glassing,,Teflon Spacer 1,,Teflon Spacer 2,,Teflon Spacer 3,,Teflon Lot #,,Comments,
+1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Data Sheet,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Can (.595),0105-001,E
+Anode,RLV12-050802,S
+Cathode,0050-001,A
+Separator,0630-001,A
+PTFE Wall Insulator,0620-006,A
+"PTFE Spacer (0.010"")",0300-003,A
+"PTFE Spacer (0.080"")",0300-103.XXX (variable spacer),C
+PTFE Wire Insulator,0620-002,B
+Header Ta,0220-005,F
+Electrolyte, 38% H?SO? + additives,-
+Tantalum Plug,0810-001,A
+Anode Tube,0510-1EP (.245)                        ,C
+Case lead wire,0400-008,B
+Threaded Stud,SMXXX,B
+,,
+PROCEDURE,Procedure Number,
+THQ3 Assembly,MS-THQ3,
+Measure for Spacers,MS- THQ-05.1,
+Anode Wire Weld,THS-THQ-04,
+Close Can,MS-THQ-05,
+Rim Weld,MS-THQ-06,
+Rim  Weld  Inspection,(OTHER THAN WELDER),
+Electrolyte Backfill ,MS-THQ-07 ,
+Plug Weld,MS-THQ-08                       (THQ Plug),
+High Temp Rinse,MS-THQ-09,
+Anode Tube Weld,MS-THQ-10                       ,
+First Article Inspect:,record measurement,
+Case Lead Wire,MS-THQ-13,
+Pull Test : ,TP-0012,
+Apply Labels,,
+Stud Weld , MS-THQ-10-29         (IF APPLICABLE)                 ,
+Laser Mark ,MS-THQ-20            Lot # & SN only,
+Burn In,MS-THQ-15  ,
+,,
+FINAL INSPECTION,,
+Capacitance & ESR,MS-THQ-16,
+Cold Leakage,MS-THQ-16,
+Mechanical Inspection,MS-THQ-22,
+Visual Inspection,MS-THQ-22,
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
