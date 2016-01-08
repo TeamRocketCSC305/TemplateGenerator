@@ -12,11 +12,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.Thread.sleep;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
+import org.apache.commons.lang.SystemUtils;
 
 /**
  *
@@ -40,7 +38,10 @@ public class TemplateWindow extends javax.swing.JFrame {
             Properties prop = new Properties();
             FileReader read = new FileReader("filePath.properties");
             prop.load(read);
-            folder = new File(prop.getProperty("testResourceFiles"));
+            if(SystemUtils.IS_OS_WINDOWS)
+                folder = new File(prop.getProperty("testResourceFilesWin"));
+            else if(SystemUtils.IS_OS_MAC)
+                folder = new File(prop.getProperty("testResourceFilesMac"));
             fileList = folder.listFiles();
         } catch (IOException ex) {
             System.out.println("File retrieval failed.");
