@@ -40,7 +40,7 @@ public class TemplateWindow extends javax.swing.JFrame {
             Properties prop = new Properties();
             FileReader read = new FileReader("filePath.properties");
             prop.load(read);
-            folder = new File(prop.getProperty("testResourceFiles"));
+            folder = new File(prop.getProperty("filePath.properties"));
             fileList = folder.listFiles();
         } catch (IOException ex) {
             System.out.println("File retrieval failed.");
@@ -234,7 +234,7 @@ public class TemplateWindow extends javax.swing.JFrame {
         String comments = jTextArea1.getText();
         double numberinput = Double.parseDouble(jTextField2.getText());
         double quantity = Double.parseDouble(jTextField3.getText());
-        File writeFile = new File(inputName + ".csv");
+        File writeFile = new File("Z:\\Database Current\\Assembly Lots\\"+inputName + ".csv");
         String serialText;
         try {
             if(!"".equals(inputName)
@@ -248,7 +248,7 @@ public class TemplateWindow extends javax.swing.JFrame {
                 printWriter.print("category path = Root\\Kit Serial Numbers\n"
                             + "Miguel Cantu,,,,Chris Rucker (Quality),,,,,,Chris Hoagland,,,,,,,,,,,,,,,,,,,,\n"                      
                             +"Serial #,,Part #,,Capacitance,,Esr,,Leakage,,Anode Lot,,,,,Cathode Lot,,Tantalum Lot,,Header Glassing,,,,,,,,,,Comments,\n"
-                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,," + comments + ",\n"
+                            +",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
                             +",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
                             +",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
                             +",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n"
@@ -273,11 +273,12 @@ public class TemplateWindow extends javax.swing.JFrame {
                 for(String line : dataFileToString(fileList[jComboBox1.getSelectedIndex()])){
                     if(line != null)
                         printWriter.print(line + "\n");
+                        
                 }
-         
+                printWriter.print(",,,,,,,,,,,,,,,,,,,,,,,,,,,,,"+comments);
                 printWriter.close();
                 jLabel2.setText("Created " + inputName + ".csv");
-                 
+                System.exit(0);
          
          
             }
@@ -318,6 +319,7 @@ public class TemplateWindow extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new TemplateWindow().setVisible(true);
             }
