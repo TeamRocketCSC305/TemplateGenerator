@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Properties;
 import javax.swing.DefaultComboBoxModel;
-import org.apache.commons.lang.SystemUtils;
 
 /**
  *
